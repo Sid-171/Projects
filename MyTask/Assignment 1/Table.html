@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Table Creater</title>
+		<style>
+			
+				body{
+				  background-color: black;
+				}
+
+				h1,h2{
+				  color: Green;
+				  display:flex;
+				  justify-content: center;
+				  text-align: center;
+				}
+				
+				
+
+				button{
+					background-color: green;
+					color: black;
+					margin: 10px 10px 10px 10px;
+					padding: 5px 4px 5px 4px;
+					border:none;
+					border-radius:2px;
+				}
+				  
+				label{
+					color:white;
+				}
+
+				#box{
+					display:flex;
+					justify-content:center;
+					align-items:center;
+					border-collapse: collapse;
+					width: 50%;
+					margin:30px 70px 20px 335px;	
+				}
+
+				th,td{
+					border: 1px solid white;
+					margin-top:30px;
+					padding: 10px;
+					text-align: center;
+				}
+
+				th{
+					background-color:black;	
+				}
+				
+				button:hover{
+					background-color:lightblue;
+					color:black;
+					cursor:pointer;
+				}
+				
+				.designTab{
+					display:flex;
+					justify-content:center;
+					align-items:center;
+					border: 1px solid black;
+					border-collapse: collapse;
+				}
+	
+		</style>
+	</head>
+	<body>
+		<h1>Want To Create A Table?</h1>
+		<h2>Let's Go 🚩......</h2>
+		<hr width="50%">
+		<table class=designTab>
+			<tr class=designrow>
+				<th><label>Enter no of rows :</label></th>
+				<td><input id=row type=number></td>
+			</tr>
+			<tr class=designcell>
+				<th><label>Enter no of columns :</label></th>
+				<td><input id=col type=number></td>
+			</tr>
+			<tr>
+				<td colspan="2"><button onclick=handleEvent() type=submit>Create table</button></td>
+			</tr>
+		</table>
+		<table id=box></table>
+
+		<script>
+			handleEvent = function(){
+				const rows 		= document.getElementById("row").value;
+				const column 	= document.getElementById("col").value;
+				const table 	= document.getElementById("box");
+				for(i=0; i < rows ;i++){
+					const r1 = table.insertRow(-1);	   
+					for(j=0; j < column ;j++){
+						const c1 = r1.insertCell(-1);
+						c1.innerHTML = "Row" + (i+1) + "Column" + (j+1);
+					}
+				}
+			}  	
+		</script>
+	</body>
+</html>

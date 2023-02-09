@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Birth Year Explorer</title>
+		<style>
+			body {
+				background-color:#AAE3E2;
+				color:#344D67;
+			}
+			.header{
+				text-align:center;
+				color:#FD8A8A;
+				padding: 30px 0px 0px 0px;
+			}
+			
+			.header1{
+				color:#3A4F7A;
+				text-align:center;
+			}
+			
+			h3{
+				color:#10A19D;
+				text-align:center;
+			}
+			
+			.nameage{
+				display:flex;
+				justify-content: center;
+				align-items:center;
+				margin-top:50px; 
+			}
+			
+			.out{
+				background-color:#00425A;
+				color:white;
+				margin: 40px 60px 30px 150px;
+				padding:7px 8px 7px 8px;
+				border:none;
+				box-shadow:1px 5px 2px grey;
+				border-radius:2px;
+				cursor:pointer;
+			}
+			
+			.name ,.age{
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class=header>Want To Know Your<h1 class=header1>Birth Year?</h1></h1>
+		<h3 class=header3>Let's Explore it...</h3>
+		<hr width="50%" height="2px">
+		<table class=nameage>
+			<tr class=name>
+				<td>
+					<label>What is your name? :</label>
+				</td>
+				<td>
+					<input id=name type=text placeholder="Enter ur name here">
+				</td>
+			</tr>
+
+			<tr class=age>
+				<td>
+					<label>How old are you? :</label>
+				</td>
+				<td>
+					<input id=year type=text placeholder="Enter ur age here">
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan="2">
+					<button type=submit class=out onclick=handleYear()>Explore</button>
+				</td>
+			</tr>
+		</table>
+		
+		<script>
+			handleYear = function () {
+				const currDate 	= new Date();
+				const currYear 	= currDate.getFullYear();
+				const Name 		= document.getElementById("name").value;
+				const userYear 	= Number(document.getElementById("year").value);
+				const currYear1 = currYear 	- 1;
+				const Year 		= currYear1 - userYear ;
+				alert("Hello " + Name + "! You were born in " + Year + " year.");
+			}
+		</script>
+	</body>
+</html>

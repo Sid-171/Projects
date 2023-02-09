@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Counter</title>
+		<style>
+			body{
+				background: linear-gradient(#e66465, #9198e5); 
+				background-repeat:repeat-x;
+				margin: 70px 120px 20px 120px;
+				padding:50px 40px 300px 40px;
+			}
+			
+			h1{
+				color:#263159;
+				text-align: center;
+				font-size:40px;
+				padding: 15px 9px 30px 55px;
+				box-shadow:0px 2px 2px grey;
+			}
+			
+			button{
+				background-color:grey;
+				border:none;
+				border-radius: 2px;
+				color:;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				cursor:pointer;	 
+				box-shadow: 0px 3px 5px #FCFFE7;
+			}
+			
+			button:hover{
+				color: white;
+				background-color:green;
+			}
+			
+			.button{
+				margin:20px 0px 170px 128px;
+				padding:10px 10px 10px 10px;
+			}
+			
+			#count{
+				width: 30px;
+				height: 30px;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				font-size:50px;
+				font-weight:bold;
+				color: black;
+				margin: 50px 30px 0px -170px;
+				padding: 30px 50px 60px 530px;
+			}
+			
+			.num{
+				background-color:#227C70;
+				border-radius:6px;
+				box-shadow:2px 4px 6px black;
+				border:none;
+				margin: 40px 150px 60px 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="num">
+			<h1>Let's Start The Counter 🧮</h1>
+			<span	id=count></span>
+			<br>
+			<table>
+				<tr>
+					<td><button id=inc class=button onclick=handleEvent('inc')>Increase</button></td>
+					<td><button id=dec class=button onclick=handleEvent('dec')>Decrease</button></td>
+					<td><button id=res class=button onclick=handleEvent('res')>Reset</button></td>
+				</tr>
+			</table>
+		</div>
+
+		<script>
+			const displayCount 		= document.getElementById("count");
+			let count 				= 0;
+			displayCount.innerHTML 	= count;
+			function handleEvent(incOrDec){
+				if(incOrDec 		=== 'inc'){
+					count++;
+					displayCount.innerHTML = count;
+				}
+				else if(incOrDec 	=== 'dec'){
+					count--;
+					displayCount.innerHTML = count;
+				}
+				else if(incOrDec 	=== 'res'){
+					count = 0;
+					displayCount.innerHTML = count;
+				}
+				return count;
+			}
+		</script>
+	</body>
+</html>
